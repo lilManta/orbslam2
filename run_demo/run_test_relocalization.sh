@@ -1,0 +1,1 @@
+./Examples/test/bin/test_relocalization Vocabulary/ORBvoc.txt Examples/Stereo/KITTI00-02.yaml /media/ywz/YWZ/kitti/dataset/sequences/00/ /home/ywz/slam_code/ORB_SLAM2_detailed_comments/log

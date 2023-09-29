@@ -1,0 +1,1 @@
+./Examples/Stereo/stereo_kitti Vocabulary/ORBvoc.txt Examples/Stereo/KITTI00-02.yaml /media/ywz/YWZ/kitti/dataset/sequences/00/
