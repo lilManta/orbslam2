@@ -60,6 +60,7 @@ ${GLOG_INCLUDE_DIRS}
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 add_library(${PROJECT_NAME} SHARED
+src/InitGlog.cc
 src/InitKeyFrame.cc
 src/SystemSetting.cc
 src/System.cc

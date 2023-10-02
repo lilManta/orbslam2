@@ -41,6 +41,7 @@
 #include "KeyFrameDatabase.h"
 #include "InitKeyFrame.h"
 
+#include "InitGlog.h"
 #include <mutex>
 
 namespace ORB_SLAM2

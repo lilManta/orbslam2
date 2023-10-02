@@ -136,7 +136,7 @@ int main(int argc, char **argv)
     // Save camera trajectory
     // 以KITTI格式存储相机轨迹数据
     SLAM.SaveTrajectoryKITTI("CameraTrajectory.txt");
-    SLAM.SaveMap("map.bin");
+    SLAM.SaveMap("./output/map.bin");
 
     return 0;
 }

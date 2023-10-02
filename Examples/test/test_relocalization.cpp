@@ -47,7 +47,7 @@ int main(int argc, char **argv)
     }
     const string programName = string(argv[0]);
     const string logPath = string(argv[4]);
-    ORB_SLAM2::InitGlog outlog(programName, logPath);
+    InitGlog outlog(programName, logPath);
 
     // Retrieve paths to images
     vector<string> vstrImageLeft;
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
     ORB_SLAM2::System SLAM(argv[1], argv[2], ORB_SLAM2::System::STEREO, true);
-    SLAM.LoadMap("map.bin");
+    SLAM.LoadMap("./output/map.bin");
     cout << "pause Program! show offline Map！" << endl;
 
     // Vector for tracking time statistics
@@ -96,8 +96,9 @@ int main(int argc, char **argv)
 #else
         std::chrono::monotonic_clock::time_point t1 = std::chrono::monotonic_clock::now();
 #endif
-        //do work... relocalization
         
+        //do work... relocalization
+        SLAM.Relocalization(imLeft,tframe);
 
 #ifdef COMPILEDWITHC11
         std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();

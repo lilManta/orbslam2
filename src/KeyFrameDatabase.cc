@@ -286,10 +286,11 @@ vector<KeyFrame*> KeyFrameDatabase::DetectRelocalizationCandidates(Frame *F)
         {
             // 根据倒排索引，提取所有包含该wordid的所有KeyFrame
             list<KeyFrame*> &lKFs = mvInvertedFile[vit->first];
-
+            LOG(INFO)<<"lKFs.size:\t"<<lKFs.size()<<"\t"<<"mvInvertedFile.size:\t"<<mvInvertedFile.size();
             for(list<KeyFrame*>::iterator lit=lKFs.begin(), lend= lKFs.end(); lit!=lend; lit++)
             {
                 KeyFrame* pKFi=*lit;
+                LOG(INFO)<<"F->mnId:\t"<<F->mnId<<"\t"<<"pKFi->mnRelocQuery:\t"<<pKFi->mnRelocQuery;
                 // pKFi->mnRelocQuery起标记作用，是为了防止重复选取
                 if(pKFi->mnRelocQuery!=F->mnId)
                 {

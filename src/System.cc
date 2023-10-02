@@ -356,6 +356,15 @@ namespace ORB_SLAM2
         return Tcw;
     }
 
+    // 重定位测试
+    cv::Mat System::Relocalization(const cv::Mat &img,const double &timestamp)
+    {
+
+        cv::Mat Tcw=mpTracker->GrabRelocalization(img,timestamp);
+        
+        return Tcw;
+    }
+
     // 激活定位模式
     void System::ActivateLocalizationMode()
     {

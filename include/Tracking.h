@@ -154,6 +154,11 @@ public:
      */
     void InformOnlyTracking(const bool &flag);
 
+    /**
+     * @brief 重定位
+    */
+   cv::Mat GrabRelocalization(const cv::Mat &img,const double timestamp);
+
 
 public:
 

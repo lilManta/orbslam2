@@ -43,6 +43,9 @@
 
 #include "Converter.h"
 
+// #include "glog/logging.h"
+#include "InitGlog.h"
+
 namespace ORB_SLAM2
 {
 
@@ -54,6 +57,7 @@ namespace ORB_SLAM2
     class LocalMapping;
     class LoopClosing;
     class Converter;
+    class InitGlog;
 
     // 本类的定义
     class System
@@ -101,6 +105,12 @@ namespace ORB_SLAM2
         // Returns the camera pose (empty if tracking fails).
         cv::Mat TrackMonocular(const cv::Mat &im,        // 图像
                                const double &timestamp); // 时间戳
+
+        /**
+         * @brief 增加外部重定位接口，实现基于先验地图的重定位计算
+         * 
+        */
+        cv::Mat Relocalization(const cv::Mat &img,const double &timestamp);
 
         // This stops local mapping thread (map building) and performs only camera tracking.
         // 使能定位模式，此时仅有运动追踪部分在工作，局部建图功能则不工作
